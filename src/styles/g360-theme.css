@@ -1,0 +1,71 @@
+/* ============================================
+ * G360 Theme - Generado desde skill: corporativo-movil
+ * ============================================ */
+
+:root {
+  /* Colores G360 - corporativo-movil */
+  --g360-bg: #0b1220;
+  --g360-surface: #151e2e;
+  --g360-accent: #00796B;
+  --g360-text: #f0f4f8;
+  --g360-muted: #94a3b8;
+  
+  /* Efectos */
+  --g360-glass: #151e2eCC;
+  --g360-blur: 16px;
+  --g360-rounded: 16px;
+  
+  /* Espaciado */
+  --g360-space-xs: 4px;
+  --g360-space-sm: 8px;
+  --g360-space-md: 16px;
+  --g360-space-lg: 24px;
+  --g360-space-xl: 32px;
+}
+
+/* === ESTILOS BASE === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--g360-bg);
+  color: var(--g360-text);
+}
+
+/* === UTILIDADES === */
+.g360-card {
+  background: var(--g360-surface);
+  border-radius: var(--g360-rounded);
+  padding: var(--g360-space-md);
+}
+
+.g360-glass {
+  background: var(--g360-glass);
+  backdrop-filter: blur(var(--g360-blur));
+  -webkit-backdrop-filter: blur(var(--g360-blur));
+}
+
+.g360-btn {
+  background: var(--g360-accent);
+  color: var(--g360-bg);
+  border: none;
+  border-radius: var(--g360-rounded);
+  padding: var(--g360-space-sm) var(--g360-space-md);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* === SIGNATURE === */
+.g360-signature {
+  color: var(--g360-muted);
+  font-size: 12px;
+  text-align: center;
+  padding: var(--g360-space-md);
+}
+
+.g360-signature::after {
+  content: "powered by G360";
+}
