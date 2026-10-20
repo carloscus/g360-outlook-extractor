@@ -27,7 +27,7 @@ uv sync
 
 echo.
 echo [BUILD] Construyendo ejecutable portatil...
-uv run python -m PyInstaller --onefile --name "G360_Outlook_Extractor" --icon "assets/images/icon.ico" --add-data "assets;assets" main.py
+uv run python -m PyInstaller --noconfirm --clean --onefile --name "G360_Outlook_Extractor" --icon "assets\images\favicon.ico" --add-data "assets;assets" --collect-all flet --hidden-import flet_desktop --hidden-import g360_flet.g360_signature --hidden-import win32timezone --paths src main.py
 
 echo.
 if exist "dist\G360_Outlook_Extractor.exe" (

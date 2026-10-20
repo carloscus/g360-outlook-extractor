@@ -14,7 +14,7 @@ import flet as ft
 
 # Colores G360
 G360_GREEN = "#00d084"
-G360_GRAY_DARK = "#94a3b8"   # dark mode
+G360_GRAY_DARK = "#94a3b8"  # dark mode
 G360_GRAY_LIGHT = "#64748b"  # light mode
 
 
@@ -121,23 +121,29 @@ class G360Signature(ft.Row):
         # Texto principal
         if self.mode == "own":
             text_controls = [
-                ft.Text("G360", size=12, color=green, weight=ft.FontWeight.BOLD,
-                        font_family="Consolas", selectable=False),
-                ft.Text(" by ccusi", size=12, color=gray,
-                        font_family="Consolas", selectable=False),
+                ft.Text(
+                    "G360", size=12, color=green, weight=ft.FontWeight.BOLD, font_family="Consolas", selectable=False
+                ),
+                ft.Text(" by ccusi", size=12, color=gray, font_family="Consolas", selectable=False),
+            ]
+        elif self.mode == "logo":
+            # Solo el isotipo + G360, sin texto adicional
+            text_controls = [
+                ft.Text(
+                    "G360", size=12, color=green, weight=ft.FontWeight.BOLD, font_family="Consolas", selectable=False
+                ),
             ]
         else:
             text_controls = [
-                ft.Text("powered by ", size=12, color=gray,
-                        font_family="Consolas", selectable=False),
-                ft.Text("G360", size=12, color=green, weight=ft.FontWeight.BOLD,
-                        font_family="Consolas", selectable=False),
+                ft.Text("powered by ", size=12, color=gray, font_family="Consolas", selectable=False),
+                ft.Text(
+                    "G360", size=12, color=green, weight=ft.FontWeight.BOLD, font_family="Consolas", selectable=False
+                ),
             ]
 
         if self.version:
             text_controls.append(
-                ft.Text(f" v{self.version}", size=12, color=gray, opacity=0.7,
-                        font_family="Consolas", selectable=False)
+                ft.Text(f" v{self.version}", size=12, color=gray, opacity=0.7, font_family="Consolas", selectable=False)
             )
 
         text_row = ft.Row(
@@ -163,8 +169,8 @@ class G360Signature(ft.Row):
 
     @mode.setter
     def mode(self, value: str):
-        if value not in ("own", "powered"):
-            raise ValueError(f"mode debe ser 'own' o 'powered', recibido: '{value}'")
+        if value not in ("own", "powered", "logo"):
+            raise ValueError(f"mode debe ser 'own', 'powered' o 'logo', recibido: '{value}'")
         self._mode = value
         if self._is_mounted():
             self._build()
@@ -204,6 +210,7 @@ class G360Signature(ft.Row):
 # ============================================================
 # Funciones de conveniencia
 # ============================================================
+
 
 def g360_own(version: str | None = None, **kwargs) -> G360Signature:
     """Isotipo modo propio: G360 by ccusi"""

@@ -1,0 +1,53 @@
+{
+  "fidelity": "brand",
+  "fonts": {
+    "heading": "Segoe UI",
+    "body": "Segoe UI"
+  },
+  "colours": {
+    "accent": "#00d084",
+    "accentStrong": "#00796B",
+    "accentBright": "#00e89a",
+    "accentSoft": "#d1fae5",
+    "ink": "#0b1220",
+    "paper": "#ffffff",
+    "muted": "#94a3b8",
+    "danger": "#b91c1c",
+    "warning": "#f59e0b",
+    "success": "#22c55e",
+    "info": "#60a5fa",
+    "surface": "#1a2332"
+  },
+  "tokens": {
+    "type_scale": {
+      "display": 44,
+      "title": 28,
+      "h1": 22,
+      "body": 16,
+      "caption": 12
+    },
+    "grid": {
+      "margin_x": 548640,
+      "margin_top": 360000,
+      "margin_bottom": 360000,
+      "columns": 12,
+      "gutter": 180000,
+      "baseline": 72000
+    },
+    "shape": {
+      "corner": "rounded",
+      "hairline_pt": 1.0
+    },
+    "colour_roles": {
+      "ink": "#0b1220",
+      "paper": "#ffffff",
+      "accent": "#00d084",
+      "muted": "#94a3b8",
+      "surface": "#1a2332",
+      "danger": "#b91c1c",
+      "warning": "#f59e0b",
+      "success": "#22c55e",
+      "info": "#60a5fa"
+    }
+  }
+}
